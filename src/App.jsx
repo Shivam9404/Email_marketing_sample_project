@@ -1,6 +1,9 @@
 import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [showChat, setShowChat] = useState(false);
+
   return (
     <div className="app">
       <nav className="navbar">
@@ -12,7 +15,7 @@ function App() {
           <a href="#contact">Contact</a>
         </div>
 
-        <button className="btn">Start Free</button>
+        <button className="btn">Get Start</button>
       </nav>
 
       <section className="hero">
@@ -53,8 +56,7 @@ function App() {
             <h3>B2C Email Sending</h3>
             <p>
               Reach customers directly with high-volume email campaigns built
-              for inbox placement, engagement and conversions. From newsletters
-              to promotional offers, we help brands scale customer acquisition.
+              for inbox placement, engagement and conversions.
             </p>
           </div>
         </div>
@@ -70,9 +72,8 @@ function App() {
           <div className="service-text">
             <h3>Audience Segmentation & Offer Promotion</h3>
             <p>
-              We deliver targeted campaigns using audience behavior,
-              demographics and engagement data—helping affiliate partners
-              promote offers to the right users at the right time.
+              We help affiliate partners promote offers to the right users at
+              the right time.
             </p>
           </div>
         </div>
@@ -88,9 +89,8 @@ function App() {
           <div className="service-text">
             <h3>Performance Tracking & Optimization</h3>
             <p>
-              Monitor opens, clicks and conversions in real time. We optimize
-              campaigns continuously to improve ROI and help partners scale
-              winning offers faster.
+              Monitor opens, clicks and conversions in real time and scale
+              winning campaigns faster.
             </p>
           </div>
         </div>
@@ -104,7 +104,7 @@ function App() {
 
         <div>
           <h4>Address</h4>
-          <p>Office No. 23,Vighnaharta prasad Society</p>
+          <p>Office No. 23, Vighnaharta Prasad Society</p>
           <p>Manaji Nagar, Pune, Maharashtra 411045</p>
           <p>India</p>
         </div>
@@ -115,6 +115,32 @@ function App() {
           <p>Phone: +91 7875563010</p>
         </div>
       </footer>
+
+      <button
+        className="chat-button"
+        onClick={() => setShowChat(!showChat)}
+      >
+        💬 Let’s Talk
+      </button>
+
+      {showChat && (
+        <div className="chat-box">
+          <h3>Let’s Connect 👋</h3>
+
+          <p>
+            Tell us about your business and we’ll get back with the best email
+            marketing solution for you.
+          </p>
+
+          <input type="text" placeholder="Your Name" />
+
+          <input type="text" placeholder="Organization Name" />
+
+          <input type="email" placeholder="Email Address" />
+
+          <button>Request Callback</button>
+        </div>
+      )}
     </div>
   );
 }
